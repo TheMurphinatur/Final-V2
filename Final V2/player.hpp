@@ -4,15 +4,17 @@
 
 class Player
 {
+    Player* classInfo = New Player;
+            classInfo->printClass;
+            delete classInfo;
+    
 public:
     
     
-    double randomInt (int min, int max);
-     int randomNumber;
-   
-   
+    int dexterity;
+    void printClass();
     
-
+     
     
 private:
     

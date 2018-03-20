@@ -19,12 +19,17 @@ Final::~Final()     // destructor
 
 
 */
-
-
+double Final::randomInt (int min, int max)
+{
+    int range = max - min + 1;
+    return rand()%range + min;
+}
 
 
 int Final::main()
 {
+    bool mRunning = 1;
+    
     while(mRunning)
     {
         mTitleFunc();// Initializes the Title Screen
@@ -76,6 +81,7 @@ void Final::game()
             cout << "You get up and open the door out of your cell.\n\n";
             cout << "You notice two identical paths \n\n";
             cout << " 1: Go to the room\n 2: Go past the room.\n\n";
+            
             cin >> mUserInput;
             
         if (mUserInput==1) mPlayerLocation=2;
@@ -148,10 +154,11 @@ void Final::game()
         }   
     if (mPlayerLocation==6)
         { 
-            srand((unsigned)time(NULL));
+            
             cout << "you attempt to break the lock.\n\n";
-            Player::randomNumber = Player::randomInt(1,20);
-            if (Player::randomNumber >= 10)
+            srand((unsigned)time(NULL));
+            Final::randomNumber = randomInt(1,20);
+            if (Final::randomNumber >= 10)
             { 
                 cout << " you manage to break into the room.\n";
                 cout << " You find nothing of interest. \n\n\n\n";
@@ -160,7 +167,7 @@ void Final::game()
                 return;
                  
             }
-            if (Player::randomNumber <= 9)
+            if (Final::randomNumber <= 9)
             {
                 cout << " You could not manage to break the lock. \n\n\n\n";
                
@@ -170,7 +177,7 @@ void Final::game()
                 
             }
             
-            }
+        }
             
     if (mPlayerLocation==7)
         { 

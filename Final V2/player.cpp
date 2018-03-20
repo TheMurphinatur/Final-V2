@@ -6,10 +6,20 @@
 
 using namespace std;
 
-
-
-double Player::randomInt (int min, int max)
+void Player::printClass()
 {
-    int range = max - min + 1;
-    return rand()%range + min;
+    cout << "You are a Rogue\n\n";
 }
+
+
+
+     
+ 
+ 
+ 
+ 
+     
+    
+    
+ 
+
